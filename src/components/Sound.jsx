@@ -51,26 +51,34 @@ const Sound = () => {
     );
   };
 
-  useEffect(() => {
-    const consent = localStorage.getItem("musicConsent");
-    const consentTime = localStorage.getItem("consentTime");
+useEffect(() => {
+  const consent = localStorage.getItem("musicConsent");
+  const consentTime = localStorage.getItem("consentTime");
 
-    if (
-      consent &&
-      consentTime &&
-      new Date(consentTime).getTime() + 3 * 24 * 60 * 60 * 1000 > new Date()
-    ) {
-      setIsPlaying(consent === "true");
+  if (
+    consent &&
+    consentTime &&
+    new Date(consentTime).getTime() + 3 * 24 * 60 * 60 * 1000 > new Date()
+  ) {
+    setIsPlaying(consent === "true");
 
-      if (consent === "true") {
-        ["click", "keydown", "touchstart"].forEach((event) =>
-          document.addEventListener(event, handleFirstUserInteraction)
-        );
-      }
-    } else {
-      setShowModal(true);
+    if (consent === "true") {
+      ["click", "keydown", "touchstart"].forEach((event) =>
+        document.addEventListener(event, handleFirstUserInteraction)
+      );
     }
-  }, []);
+  } else {
+    setShowModal(true);
+  }
+
+  // Clean up event listeners
+  return () => {
+    ["click", "keydown", "touchstart"].forEach((event) =>
+      document.removeEventListener(event, handleFirstUserInteraction)
+    );
+  };
+}, []); // Consider adding relevant dependencies if needed
+
 
   const toggle = () => {
     const newState = !isPlaying;
