@@ -23,7 +23,7 @@ export default function Contact() {
           Looking Forward to Hearing from You!
           </h1>
           <p className="text-center font-light text-sm xs:text-base">
-          Whether it’s a collaboration, a project inquiry, or just a friendly hello, don’t hesitate to drop me a message. I'll get back to you as soon as possible!
+          Whether it is a collaboration, a project inquiry, or just a friendly hello, don’t hesitate to drop me a message. I'll get back to you as soon as possible!
           </p>
         </div>
         <Form />
