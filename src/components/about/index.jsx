@@ -15,7 +15,7 @@ const AboutDetails = () => {
             Architect of Enchantment
           </h2>
           <p className="font-light  text-xs sm:text-sm md:text-base   ">
-            I'm Azad Gupta, an MSc Informatics student at Delhi University. With experience in circuit design, embedded systems, and freelance SEO and web development, I combine technical expertise with marketing strategies to deliver comprehensive solutions.
+            I am Azad Gupta, an MSc Informatics student at Delhi University. With experience in circuit design, embedded systems, and freelance SEO and web development, I combine technical expertise with marketing strategies to deliver comprehensive solutions.
           </p>
         </ItemLayout>
 
